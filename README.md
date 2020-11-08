@@ -1,6 +1,7 @@
 # FingerTap music play from Live Video Feed
-
-This is a hobby project. It utilizes Tensorflow JS and Tensorflow Handpose Js to initiate the processings.
+|| Finger Tapped Music || Koi.. Mil Gaya 😃 ||
+This is an attempt to mimic the computer sounds showed in one of my favorite childhood movies "Koi.. Mil Gaya".
+It is a hobby project. It utilizes Tensorflow JS and Tensorflow Handpose Js to initiate the processings.
 You can see the <a href="https://flaskavishek.pythonanywhere.com/koimilgeya_mimic/"> Demo here</a>
 ## Usage
 1. Clone the repository and run through a server.
