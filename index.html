@@ -1,0 +1,126 @@
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+==============================================================================-->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0, user-scalable=no">
+<!-- Load three.js -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.106.2/build/three.min.js"></script>
+<!-- Load scatter-gl.js -->
+<!-- TODO(annxingyuan): Submit a PR to scatter-gl that allows polylines to update in the render loop. -->
+<script src="https://storage.googleapis.com/learnjs-data/handtrack_staging/scatter-gl.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.1/lib/scatter-gl.min.js"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/stats.js@0.17.0/build/stats.min.js"></script>
+
+<style type="text/css">
+    
+#statusContainer{
+background-color: #666;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 55px;
+  color: white;
+}
+ .container {
+        width: 100%;
+        background: #f2f2f2; 
+        position: relative;
+    }
+.nav, .section {
+    float: left; 
+    padding: 20px;
+    /*min-height: 170px;*/
+    box-sizing: border-box;
+}
+.nav {            
+    width: 70%;             
+    background: #d4d7dc;
+}
+.section {
+    width: 30%;
+}
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.footer {
+    background: #acb3b9;            
+    text-align: center;
+    padding: 5px;
+}
+
+#pose-result{
+    font-size: 50px;
+}
+</style>
+<body>
+
+    
+
+<div class="container">
+
+    <div id="statusContainer">
+        <p class="err" id="errorMessage"></p>
+        <p class="err" id="info"></p>
+        <p id="status">Application loading...  (It may take upto 25 seconds)</p>
+        <button id="startAndStop" disabled>Start</button>
+    </div>
+    
+    <div  class="wrapper clearfix">
+        <div id="canvasContainer" class="nav">
+            <canvas id="output"></canvas>
+            <video id="video" playsinline style="
+                                -webkit-transform: scaleX(-1);
+                                transform: scaleX(-1);
+                                visibility: hidden;
+            "></video>
+        </div>
+        <div id="pose-result" class="section">
+            Finger Taps
+        </div>
+
+          <audio data-key="thumb_tap" src="assets/B.mp3"></audio>
+          <audio data-key="index_tap" src="assets/C.mp3"></audio>
+          <audio data-key="middle_tap" src="assets/D.mp3"></audio>
+          <audio data-key="ring_tap" src="assets/E.mp3"></audio>
+          <audio data-key="pinky_tap" src="assets/F.mp3"></audio>
+                 
+    </div>
+
+</div>
+
+
+
+
+    <link href="js_example_style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+      <!-- Require the peer dependencies of handpose. -->
+    <script src="https://unpkg.com/@tensorflow/tfjs-core@2.1.0/dist/tf-core.js"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs-converter@2.1.0/dist/tf-converter.js"></script>
+
+      <!-- You must explicitly require a TF.js backend if you're not using the tfs union bundle. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-cpu@2.0.0-rc.4/dist/tf-backend-cpu.es2017.js"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.1.0/dist/tf-backend-webgl.js"></script>
+      <!-- Alternatively you can use the WASM backend: <script src="https://unpkg.com/@tensorflow/tfjs-backend-wasm@2.1.0/dist/tf-backend-wasm.js"></script> -->
+
+    <script src="https://unpkg.com/@tensorflow-models/handpose@0.0.6/dist/handpose.js"></script>
+    <script type="module" src="hand.js"></script>
+</body>
+
+<script type="text/javascript">
+
+</script>
