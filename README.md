@@ -10,4 +10,5 @@ python -m http.server
 ```
 3. Now visit localhost:8000 and wait for the js modues to load. (takes 2-3 minutes to download the essentials)
 4. Enjoy
+Give this repo a star if you like it.
 
