@@ -1,6 +1,6 @@
 # FingerTap music play from Live Video Feed
 
-This is a hobby project.
+This is a hobby project. It utilizes Tensorflow JS and Tensorflow Handpose Js to initiate the processings.
 
 ## Usage
 1. Clone the repository and run through a server.
